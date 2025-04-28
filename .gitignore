@@ -1,0 +1,32 @@
+# Ignorar arquivos de build e temporários do Delphi
+*.dcu
+*.dsk
+*.local
+*.identcache
+*.tvsconfig
+*.~*
+*.bak
+*.cfg
+*.dcp
+*.dres
+*.stat
+
+# Pastas que o Delphi cria
+__history/
+__recovery/
+Win32/Debug/
+Win32/Release/
+Win64/Debug/
+Win64/Release/
+Android/Debug/
+Android/Release/
+iOSSimulator/Debug/
+iOSSimulator/Release/
+OSX32/Debug/
+OSX32/Release/
+
+# Evitar arquivos de configurações locais
+*.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
