@@ -16,12 +16,12 @@ type
     Image3: TImage;
     CircleSelecao: TCircle;
     TabControl1: TTabControl;
-    TabItem1: TTabItem;
+    TabHomer: TTabItem;
     TabItem2: TTabItem;
     TabItem3: TTabItem;
     TabItem4: TTabItem;
     RectangleFundoAba1: TRectangle;
-    EditAba1: TEdit;
+    EditPesquizarAba1: TEdit;
     RectangleEdit1: TRectangle;
   private
     { Private declarations }
