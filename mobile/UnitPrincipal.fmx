@@ -10,7 +10,7 @@ object FormPrincipal: TFormPrincipal
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object TabControl1: TTabControl
     Align = Client
     Margins.Left = -1.000000000000000000
@@ -20,26 +20,27 @@ object FormPrincipal: TFormPrincipal
     Size.Width = 368.000000000000000000
     Size.Height = 567.000000000000000000
     Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
     TabIndex = 0
     TabOrder = 1
     TabPosition = Top
     Sizes = (
       368s
-      541s
+      518s
       368s
-      541s
+      518s
       368s
-      541s
+      518s
       368s
-      541s)
+      518s)
     object TabHomer: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
       IsSelected = True
-      Size.Width = 75.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -50,7 +51,7 @@ object FormPrincipal: TFormPrincipal
         Align = Client
         Fill.Color = xFFF1F1F5
         Size.Width = 368.000000000000000000
-        Size.Height = 541.000000000000000000
+        Size.Height = 518.000000000000000000
         Size.PlatformDefault = False
         object RectangleEdit1: TRectangle
           Align = Top
@@ -81,7 +82,7 @@ object FormPrincipal: TFormPrincipal
             Margins.Right = 6.000000000000000000
             Margins.Bottom = 6.000000000000000000
             Size.Width = 336.000000000000000000
-            Size.Height = 29.000000000000000000
+            Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'Pesquizar na loja'
             StyledSettings = [Family, Style]
@@ -95,8 +96,8 @@ object FormPrincipal: TFormPrincipal
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -131,8 +132,8 @@ object FormPrincipal: TFormPrincipal
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -167,8 +168,8 @@ object FormPrincipal: TFormPrincipal
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 92.000000000000000000
+      Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -513,7 +514,7 @@ object FormPrincipal: TFormPrincipal
     end
     object CircleSelecao: TCircle
       Fill.Color = xFF6C95FB
-      Position.X = 18.500000000000000000
+      Position.X = 28.000000000000000000
       Position.Y = 52.000000000000000000
       Size.Width = 10.000000000000000000
       Size.Height = 10.000000000000000000

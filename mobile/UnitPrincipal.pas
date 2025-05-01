@@ -48,6 +48,7 @@ implementation
 procedure TFormPrincipal.TrocarAba(img: TImage);
 begin
   TabControl1.GotoVisibleTab(img.tag);
+  CircleSelecao.Position.X := img.Position.X + (img.Width / 2) -5;
 end;
 
 procedure TFormPrincipal.HomerClick(Sender: TObject);
