@@ -1,48 +1,52 @@
-object Form1: TForm1
+object FormPrincipal: TFormPrincipal
   Left = 0
   Top = 0
   Caption = 'e-Commerce'
-  ClientHeight = 597
-  ClientWidth = 337
+  ClientHeight = 565
+  ClientWidth = 366
   Fill.Kind = Solid
+  Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
-    Size.Width = 337.000000000000000000
-    Size.Height = 597.000000000000000000
+    Size.Width = 366.000000000000000000
+    Size.Height = 565.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     TabPosition = Top
     Sizes = (
-      337s
-      571s
-      337s
-      571s
-      337s
-      571s
-      337s
-      571s)
+      366s
+      539s
+      366s
+      539s
+      366s
+      539s
+      366s
+      539s)
     object TabHomer: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 75.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabHomer'
+      ExplicitSize.cx = 75.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object RectangleFundoAba1: TRectangle
         Align = Client
         Fill.Color = xFFF1F1F5
-        Size.Width = 337.000000000000000000
-        Size.Height = 571.000000000000000000
+        Size.Width = 366.000000000000000000
+        Size.Height = 539.000000000000000000
         Size.PlatformDefault = False
         object RectangleEdit1: TRectangle
           Align = Top
@@ -53,7 +57,7 @@ object Form1: TForm1
           Margins.Bottom = 15.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 15.000000000000000000
-          Size.Width = 317.000000000000000000
+          Size.Width = 346.000000000000000000
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
@@ -72,7 +76,7 @@ object Form1: TForm1
             Margins.Top = 6.000000000000000000
             Margins.Right = 6.000000000000000000
             Margins.Bottom = 6.000000000000000000
-            Size.Width = 305.000000000000000000
+            Size.Width = 334.000000000000000000
             Size.Height = 29.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'Pesquizar na loja'
@@ -86,25 +90,27 @@ object Form1: TForm1
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 69.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem2'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object Rectangle1: TRectangle
         Align = Top
         Fill.Color = claWhite
         Sides = [Bottom]
-        Size.Width = 337.000000000000000000
+        Size.Width = 366.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFF1F1F5
         object Label1: TLabel
           Align = Contents
           StyledSettings = [Family, FontColor]
-          Size.Width = 337.000000000000000000
+          Size.Width = 366.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -127,6 +133,29 @@ object Form1: TForm1
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem3'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Rectangle2: TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Sides = [Bottom]
+        Size.Width = 366.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFF1F1F5
+        object Label2: TLabel
+          Align = Contents
+          StyledSettings = [Family, FontColor]
+          Size.Width = 366.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = ' Carrinho de Compras'
+          TabOrder = 0
+        end
+      end
     end
     object TabItem4: TTabItem
       CustomIcon = <
@@ -140,6 +169,29 @@ object Form1: TForm1
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem4'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object TRectangle
+        Align = Top
+        Fill.Color = claWhite
+        Sides = [Bottom]
+        Size.Width = 366.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFF1F1F5
+        object Label3: TLabel
+          Align = Contents
+          StyledSettings = [Family, FontColor]
+          Size.Width = 366.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'Configura'#231#245'es'
+          TabOrder = 0
+        end
+      end
     end
   end
   object RectTabs: TRectangle
@@ -150,14 +202,15 @@ object Form1: TForm1
     Margins.Right = 10.000000000000000000
     Margins.Bottom = 10.000000000000000000
     Position.X = 10.000000000000000000
-    Position.Y = 517.000000000000000000
-    Size.Width = 317.000000000000000000
+    Position.Y = 485.000000000000000000
+    Size.Width = 346.000000000000000000
     Size.Height = 70.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     XRadius = 5.000000000000000000
     YRadius = 5.000000000000000000
-    object Image1: TImage
+    object ImagePerfil: TImage
+      Tag = 3
       MultiResBitmap = <
         item
           Width = 128
@@ -238,13 +291,15 @@ object Form1: TForm1
         end>
       Align = Scale
       Cursor = crHandPoint
-      Position.X = 258.110565185546900000
+      Position.X = 294.000000000000000000
       Position.Y = 15.000000000000000000
-      Size.Width = 40.094085693359380000
+      Size.Width = 43.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
+      OnClick = HomerClick
     end
-    object Image2: TImage
+    object ImageCarrinho: TImage
+      Tag = 2
       MultiResBitmap = <
         item
           Width = 128
@@ -324,13 +379,30 @@ object Form1: TForm1
         end>
       Align = Scale
       Cursor = crHandPoint
-      Position.X = 171.656127929687500000
+      Position.X = 199.000000000000000000
       Position.Y = 15.000000000000000000
-      Size.Width = 40.095123291015630000
+      Size.Width = 44.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
+      OnClick = HomerClick
+      object LabelCarrinho: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 39.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        TextSettings.VertAlign = Leading
+        Text = '14'
+        TabOrder = 0
+      end
     end
-    object Image3: TImage
+    object ImageMenu: TImage
+      Tag = 1
       MultiResBitmap = <
         item
           Width = 128
@@ -360,11 +432,12 @@ object Form1: TForm1
         end>
       Align = Scale
       Cursor = crHandPoint
-      Position.X = 85.201545715332030000
-      Position.Y = 16.000000000000000000
-      Size.Width = 40.094749450683590000
+      Position.X = 104.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 44.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
+      OnClick = HomerClick
     end
     object Homer: TImage
       MultiResBitmap.Height = 128
@@ -427,10 +500,12 @@ object Form1: TForm1
         end>
       Align = Scale
       Cursor = crHandPoint
-      Position.Y = 12.000000000000000000
-      Size.Width = 40.094940185546880000
+      Position.X = 10.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 44.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
+      OnClick = HomerClick
     end
     object CircleSelecao: TCircle
       Fill.Color = xFF6C95FB

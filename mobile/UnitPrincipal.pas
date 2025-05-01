@@ -8,12 +8,12 @@ uses
   FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TFormPrincipal = class(TForm)
     RectTabs: TRectangle;
     Homer: TImage;
-    Image1: TImage;
-    Image2: TImage;
-    Image3: TImage;
+    ImagePerfil: TImage;
+    ImageCarrinho: TImage;
+    ImageMenu: TImage;
     CircleSelecao: TCircle;
     TabControl1: TTabControl;
     TabHomer: TTabItem;
@@ -25,17 +25,39 @@ type
     RectangleEdit1: TRectangle;
     Rectangle1: TRectangle;
     Label1: TLabel;
+    Rectangle2: TRectangle;
+    Label2: TLabel;
+    Label3: TLabel;
+    LabelCarrinho: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure HomerClick(Sender: TObject);
   private
+    procedure TrocarAba(img: TImage);
     { Private declarations }
   public
     { Public declarations }
   end;
 
 var
-  Form1: TForm1;
+  FormPrincipal: TFormPrincipal;
 
 implementation
 
 {$R *.fmx}
+
+procedure TFormPrincipal.TrocarAba(img: TImage);
+begin
+  TabControl1.GotoVisibleTab(img.tag);
+end;
+
+procedure TFormPrincipal.HomerClick(Sender: TObject);
+begin
+  TrocarAba(TImage(Sender));
+end;
+
+procedure TFormPrincipal.FormCreate(Sender: TObject);
+begin
+  TabControl1.TabPosition := TTabPosition.None
+end;
 
 end.

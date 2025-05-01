@@ -3,12 +3,12 @@ program Ecommerce;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  UnitPrincipal in 'UnitPrincipal.pas' {Form1};
+  UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.Run;
 end.
