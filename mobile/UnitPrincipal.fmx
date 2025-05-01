@@ -13,21 +13,25 @@ object FormPrincipal: TFormPrincipal
   DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
-    Size.Width = 366.000000000000000000
-    Size.Height = 565.000000000000000000
+    Margins.Left = -1.000000000000000000
+    Margins.Top = -1.000000000000000000
+    Margins.Right = -1.000000000000000000
+    Margins.Bottom = -1.000000000000000000
+    Size.Width = 368.000000000000000000
+    Size.Height = 567.000000000000000000
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 1
     TabPosition = Top
     Sizes = (
-      366s
-      539s
-      366s
-      539s
-      366s
-      539s
-      366s
-      539s)
+      368s
+      541s
+      368s
+      541s
+      368s
+      541s
+      368s
+      541s)
     object TabHomer: TTabItem
       CustomIcon = <
         item
@@ -45,8 +49,8 @@ object FormPrincipal: TFormPrincipal
       object RectangleFundoAba1: TRectangle
         Align = Client
         Fill.Color = xFFF1F1F5
-        Size.Width = 366.000000000000000000
-        Size.Height = 539.000000000000000000
+        Size.Width = 368.000000000000000000
+        Size.Height = 541.000000000000000000
         Size.PlatformDefault = False
         object RectangleEdit1: TRectangle
           Align = Top
@@ -57,7 +61,7 @@ object FormPrincipal: TFormPrincipal
           Margins.Bottom = 15.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 15.000000000000000000
-          Size.Width = 346.000000000000000000
+          Size.Width = 348.000000000000000000
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
@@ -76,7 +80,7 @@ object FormPrincipal: TFormPrincipal
             Margins.Top = 6.000000000000000000
             Margins.Right = 6.000000000000000000
             Margins.Bottom = 6.000000000000000000
-            Size.Width = 334.000000000000000000
+            Size.Width = 336.000000000000000000
             Size.Height = 29.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'Pesquizar na loja'
@@ -103,14 +107,14 @@ object FormPrincipal: TFormPrincipal
         Align = Top
         Fill.Color = claWhite
         Sides = [Bottom]
-        Size.Width = 366.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFF1F1F5
         object Label1: TLabel
           Align = Contents
           StyledSettings = [Family, FontColor]
-          Size.Width = 366.000000000000000000
+          Size.Width = 368.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -139,14 +143,14 @@ object FormPrincipal: TFormPrincipal
         Align = Top
         Fill.Color = claWhite
         Sides = [Bottom]
-        Size.Width = 366.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFF1F1F5
         object Label2: TLabel
           Align = Contents
           StyledSettings = [Family, FontColor]
-          Size.Width = 366.000000000000000000
+          Size.Width = 368.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -175,14 +179,14 @@ object FormPrincipal: TFormPrincipal
         Align = Top
         Fill.Color = claWhite
         Sides = [Bottom]
-        Size.Width = 366.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFF1F1F5
         object Label3: TLabel
           Align = Contents
           StyledSettings = [Family, FontColor]
-          Size.Width = 366.000000000000000000
+          Size.Width = 368.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
@@ -397,7 +401,7 @@ object FormPrincipal: TFormPrincipal
         TextSettings.FontColor = claWhite
         TextSettings.HorzAlign = Center
         TextSettings.VertAlign = Leading
-        Text = '14'
+        Text = '88'
         TabOrder = 0
       end
     end
