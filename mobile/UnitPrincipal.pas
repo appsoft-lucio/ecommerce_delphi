@@ -29,6 +29,26 @@ type
     Label2: TLabel;
     Label3: TLabel;
     LabelCarrinho: TLabel;
+    LabelCatao: TLabel;
+    ImageEndereco: TImage;
+    RectangleEnderecos: TRectangle;
+    Image1: TImage;
+    Rectangle3: TRectangle;
+    LabelDesconectar: TLabel;
+    Image2: TImage;
+    Image3: TImage;
+    Rectangle4: TRectangle;
+    LabelEndereco: TLabel;
+    Image4: TImage;
+    Image5: TImage;
+    Rectangle5: TRectangle;
+    LabelMeuCarrinho: TLabel;
+    Image6: TImage;
+    Image7: TImage;
+    Rectangle6: TRectangle;
+    LabelDadosPerfil: TLabel;
+    Image8: TImage;
+    Image9: TImage;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
   private
@@ -62,7 +82,8 @@ end;
 
 procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
-  TabControl1.TabPosition := TTabPosition.None
+  TabControl1.TabPosition := TTabPosition.None;
+  TrocarAba(Homer);
 end;
 
 end.
