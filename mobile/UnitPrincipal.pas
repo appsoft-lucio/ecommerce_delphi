@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls;
+  FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, FMX.Ani;
 
 type
   TFormPrincipal = class(TForm)
@@ -47,9 +47,12 @@ implementation
 
 procedure TFormPrincipal.TrocarAba(img: TImage);
 begin
+  //CircleSelecao.Position.X := img.Position.X;
+  TAnimator.AnimateFloat(CircleSelecao, 'Position.X', img.position.X,
+                    1, TAnimationType.Out, TInterpolationType.Elastic);
+
   TabControl1.GotoVisibleTab(img.tag);
 
-  CircleSelecao.Position.X := img.Position.X;
 end;
 
 procedure TFormPrincipal.HomerClick(Sender: TObject);
