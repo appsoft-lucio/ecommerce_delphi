@@ -10,6 +10,7 @@ object FormPrincipal: TFormPrincipal
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  OnShow = FormShow
   DesignerMasterStyle = 3
   object TabControl1: TTabControl
     Align = Client
@@ -21,7 +22,7 @@ object FormPrincipal: TFormPrincipal
     Size.Height = 716.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 1
     TabPosition = Top
     Sizes = (
@@ -38,7 +39,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 85.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -88,6 +89,23 @@ object FormPrincipal: TFormPrincipal
             StyledSettings = [Family, Style]
           end
         end
+        object ListBoxCategoria: TListBox
+          Align = Top
+          Position.Y = 75.000000000000000000
+          Size.Width = 342.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 0
+          ShowScrollBars = False
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          ListStyle = Horizontal
+          Viewport.Width = 342.000000000000000000
+          Viewport.Height = 60.000000000000000000
+        end
       end
     end
     object TabItem2: TTabItem
@@ -118,7 +136,7 @@ object FormPrincipal: TFormPrincipal
           Size.Width = 342.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.Size = 22.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
           TextSettings.HorzAlign = Center
           Text = 'Lista de Desejos'
@@ -154,7 +172,7 @@ object FormPrincipal: TFormPrincipal
           Size.Width = 342.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.Size = 22.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
           TextSettings.HorzAlign = Center
           Text = ' Carrinho de Compras'
@@ -167,7 +185,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 87.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False

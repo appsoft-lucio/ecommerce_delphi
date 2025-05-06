@@ -5,10 +5,11 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>Ecommerce.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">Ecommerce</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -214,6 +215,12 @@
         <DCCReference Include="UnitPrincipal.pas">
             <Form>FormPrincipal</Form>
             <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Utils\uLoading.pas"/>
+        <DCCReference Include="Frames\Frame.Categoria.pas">
+            <Form>FrameCategoria</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

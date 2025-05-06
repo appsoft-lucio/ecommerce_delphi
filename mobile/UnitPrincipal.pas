@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, FMX.Ani;
+  FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, FMX.Ani,
+  FMX.Layouts, FMX.ListBox, uLoading;
 
 type
   TFormPrincipal = class(TForm)
@@ -50,10 +51,16 @@ type
     ImageDadosDoPerfil: TImage;
     ImageAcessarPerfil: TImage;
     RectangleConfiguracoes: TRectangle;
+    ListBoxCategoria: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     procedure TrocarAba(img: TImage);
+    procedure AddCategoria(id_categoria: integer; categoria: string);
+    procedure ListarCategorias;
+    procedure TerminateCategoria(Sender: TObject);
+
     { Private declarations }
   public
     { Public declarations }
@@ -65,6 +72,64 @@ var
 implementation
 
 {$R *.fmx}
+
+uses Frame.Categoria;
+
+procedure TFormPrincipal.AddCategoria(id_categoria: integer;
+                                      categoria: string);
+
+var
+  item : TListBoxItem;
+  frame : TFrameCategoria;
+
+begin
+  item:= TListBoxItem.Create(ListBoxCategoria);
+  item.Selectable := false;
+  item.Text := '';
+  item.Width := 105;
+  item.Tag := id_categoria;
+
+  //Frame
+  frame := TFrameCategoria.Create(item);
+  frame.LabelCategoria.Text := categoria;
+
+  item.AddObject(frame);
+  ListBoxCategoria.AddObject(item);
+end;
+
+procedure TFormPrincipal.TerminateCategoria(Sender: TObject);
+begin
+  TLoading.Hide;
+
+  //Se deu erro na thread....
+  if Assigned(TThread(Sender).FatalException) then
+  begin
+    showmessage(Exception(TThread(sender).FatalException).Message);
+    Exit;
+  end;
+
+  AddCategoria(1, 'Audio');
+  AddCategoria(1, 'Informática');
+  AddCategoria(1, 'Roupas');
+  AddCategoria(1, 'Limpeza');
+  AddCategoria(1, 'Escolar');
+  AddCategoria(1, 'Livros');
+
+end;
+
+procedure TFormPrincipal.ListarCategorias;
+begin
+  TLoading.Show(FormPrincipal, 'Carregando');
+  ListBoxCategoria.Items.Clear;
+
+  TLoading.ExecuteThread(Procedure
+  begin
+    //Acesso ao servido
+    sleep(500);
+  end,
+  TerminateCategoria);
+
+end;
 
 procedure TFormPrincipal.TrocarAba(img: TImage);
 begin
@@ -85,6 +150,11 @@ procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
   TabControl1.TabPosition := TTabPosition.None;
   TrocarAba(Homer);
+end;
+
+procedure TFormPrincipal.FormShow(Sender: TObject);
+begin
+  ListarCategorias;
 end;
 
 end.
