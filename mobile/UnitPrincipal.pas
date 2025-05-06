@@ -52,6 +52,7 @@ type
     ImageAcessarPerfil: TImage;
     RectangleConfiguracoes: TRectangle;
     ListBoxCategoria: TListBox;
+    ListBoxProdutos: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -63,6 +64,10 @@ type
     procedure ListarCategorias;
     procedure TerminateCategoria(Sender: TObject);
     procedure SelecionarCategoria(item: TListBoxItem);
+    procedure ListarProdutos(id_categoria: integer);
+    procedure TerminateProdutos(Sender: TObject);
+    procedure AddProduto(id_produto: integer; nome, descricao,
+      url_foto: string; preco: double);
 
     { Private declarations }
   public
@@ -100,6 +105,24 @@ begin
   ListBoxCategoria.AddObject(item);
 end;
 
+procedure TFormPrincipal.AddProduto(id_produto: integer;
+                                      nome, descricao, url_foto: string;
+                                      preco: double);
+var
+  item : TListBoxItem;
+
+begin
+  item:= TListBoxItem.Create(ListBoxProdutos);
+  item.Selectable := false;
+  item.Text := nome + sLineBreak +
+               descricao + sLineBreak +
+               'Preço: R$ ' + FormatFloat('0.00', preco);
+  item.Height := 105;
+  item.Tag := id_produto;
+
+  ListBoxProdutos.AddObject(item);
+end;
+
 procedure TFormPrincipal.SelecionarCategoria(item: TListBoxItem);
 var
   i : integer;
@@ -126,6 +149,9 @@ begin
   frame.LabelCategoria.FontColor := $FFFFFFFF; //Texto branco
   frame.LabelCategoria.Font.Size := 16; //Aumentar fontSize
 
+  //Listar produtos dessa cattegoria
+  ListarProdutos(item.Tag);
+
 end;
 
 procedure TFormPrincipal.TerminateCategoria(Sender: TObject);
@@ -150,6 +176,39 @@ begin
   if ListBoxCategoria.Items.Count > 0 then
   SelecionarCategoria(ListBoxCategoria.ItemByIndex(0));
 
+end;
+
+procedure TFormPrincipal.TerminateProdutos(Sender: TObject);
+begin
+  TLoading.Hide;
+
+  //Se deu erro na thread....
+  if Assigned(TThread(Sender).FatalException) then
+  begin
+    showmessage(Exception(TThread(sender).FatalException).Message);
+    Exit;
+  end;
+
+  AddProduto(1, 'Apple Airpods', '3º Geração de fones com som especial',
+              'http://servidor/foto.png', 999);
+  AddProduto(2, 'JBL Tune 510BT', '5ª Geração com graves potentes e bateria de 40h',
+              'http://servidor/jbl510bt.png', 299);
+  AddProduto(3, 'Sony WH-1000XM5', 'Cancelamento de ruído inteligente e som Hi-Res',
+              'http://servidor/sonyxm5.png', 1499);
+  AddProduto(4, 'Samsung Galaxy Buds 2', '2ª geração de fones sem fio com ajuste automático',
+              'http://servidor/buds2.png', 599);
+  AddProduto(5, 'Logitech G435', 'Headset gamer leve com som estéreo e microfone embutido',
+              'http://servidor/g435.png', 449);
+  AddProduto(6, 'Bose QuietComfort 45', 'Áudio imersivo com cancelamento ativo de ruído',
+              'http://servidor/boseqc45.png', 1799);
+  AddProduto(7, 'Philips SHP9600', 'Som aberto de estúdio com drivers de 50mm',
+              'http://servidor/shp9600.png', 599);
+  AddProduto(8, 'Edifier R1700BT', 'Caixas de som Bluetooth com áudio balanceado e controle remoto',
+              'http://servidor/r1700bt.png', 749);
+  AddProduto(9, 'Xiaomi Redmi Buds 4', 'Conforto com som dinâmico e estojo com carregamento rápido',
+              'http://servidor/redmibuds4.png', 279);
+  AddProduto(10, 'HyperX Cloud Alpha', 'Headset com estrutura durável e drivers duplos para melhor separação sonora',
+              'http://servidor/cloudalpha.png', 699);
 
 end;
 
@@ -164,6 +223,20 @@ begin
     sleep(500);
   end,
   TerminateCategoria);
+
+end;
+
+procedure TFormPrincipal.ListarProdutos(id_categoria: integer);
+begin
+  TLoading.Show(FormPrincipal, 'Carregando');
+  ListBoxProdutos.Items.Clear;
+
+  TLoading.ExecuteThread(Procedure
+  begin
+    //Acesso ao servido
+    sleep(500);
+  end,
+  TerminateProdutos);
 
 end;
 

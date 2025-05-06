@@ -1,0 +1,35 @@
+
+----------------------------------------------
+Lista das categorias (vitrine)
+----------------------------------------------
+{
+	"id_categoria": 1,
+	"categoria": "Bebidas"	
+}
+
+
+----------------------------------------------
+Lista dos produtos (vitrine)
+----------------------------------------------
+Filtro: id_categoria
+
+{
+	"id_produto": 1,
+	"nome": "Apple Airpods",
+	"descricao": "3º geração de fones com som espacial",
+	"url_foto": "http://servidor/foto.png",
+	"preco": 1250
+}
+
+
+----------------------------------------------
+Lista de Desejos (Aba favoritos)
+----------------------------------------------
+{
+	"id_favorito": 1,
+	"id_produto": 1,
+	"nome": "Fones Apple",
+	"http://servidor/foto.png",
+	"preco": 1250
+}
+

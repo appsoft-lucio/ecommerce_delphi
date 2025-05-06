@@ -107,6 +107,22 @@ object FormPrincipal: TFormPrincipal
           Viewport.Width = 342.000000000000000000
           Viewport.Height = 60.000000000000000000
         end
+        object ListBoxProdutos: TListBox
+          Align = Client
+          Size.Width = 342.000000000000000000
+          Size.Height = 532.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'transparentlistboxstyle'
+          TabOrder = 1
+          ShowScrollBars = False
+          Columns = 2
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 342.000000000000000000
+          Viewport.Height = 532.000000000000000000
+        end
       end
     end
     object TabItem2: TTabItem
