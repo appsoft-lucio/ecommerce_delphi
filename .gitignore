@@ -10,8 +10,22 @@
 *.dcp
 *.dres
 *.stat
+*.dproj.local
+*.dproj.deployproj
+*.tmp
+*.map
+*.log
 
-# Pastas que o Delphi cria
+# Ignorar arquivos gerados ao compilar para mobile
+*.apk
+*.aab
+*.ipa
+*.app
+*.so
+*.jar
+*.dex
+
+# Ignorar pastas que o Delphi cria ao compilar
 __history/
 __recovery/
 Win32/Debug/
@@ -20,13 +34,26 @@ Win64/Debug/
 Win64/Release/
 Android/Debug/
 Android/Release/
+Android64/Debug/
+Android64/Release/
 iOSSimulator/Debug/
 iOSSimulator/Release/
+iOSDevice64/Debug/
+iOSDevice64/Release/
 OSX32/Debug/
 OSX32/Release/
 
+# Pastas de plataforma (caso existam fora das subpastas Debug/Release)
+Win32/
+Win64/
+Android/
+Android64/
+iOSDevice64/
+iOSSimulator/
+OSX32/
+
 # Evitar arquivos de configurações locais
-*.vscode/
+.vscode/
 .idea/
 *.DS_Store
 Thumbs.db
