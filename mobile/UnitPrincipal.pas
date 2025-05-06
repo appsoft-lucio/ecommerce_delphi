@@ -58,6 +58,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure ListBoxCategoriaItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
+    procedure FormResize(Sender: TObject);
   private
     procedure TrocarAba(img: TImage);
     procedure AddCategoria(id_categoria: integer; categoria: string);
@@ -117,7 +118,7 @@ begin
   item.Text := nome + sLineBreak +
                descricao + sLineBreak +
                'Preço: R$ ' + FormatFloat('0.00', preco);
-  item.Height := 105;
+  item.Height := 110;
   item.Tag := id_produto;
 
   ListBoxProdutos.AddObject(item);
@@ -265,6 +266,11 @@ procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
   TabControl1.TabPosition := TTabPosition.None;
   TrocarAba(Homer);
+end;
+
+procedure TFormPrincipal.FormResize(Sender: TObject);
+begin
+  ListBoxProdutos.Columns := Trunc(ListBoxProdutos.Width / 150);
 end;
 
 procedure TFormPrincipal.FormShow(Sender: TObject);
