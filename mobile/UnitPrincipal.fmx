@@ -103,6 +103,7 @@ object FormPrincipal: TFormPrincipal
           DefaultItemStyles.GroupHeaderStyle = ''
           DefaultItemStyles.GroupFooterStyle = ''
           ListStyle = Horizontal
+          OnItemClick = ListBoxCategoriaItemClick
           Viewport.Width = 342.000000000000000000
           Viewport.Height = 60.000000000000000000
         end

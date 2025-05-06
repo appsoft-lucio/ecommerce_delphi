@@ -55,11 +55,14 @@ type
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ListBoxCategoriaItemClick(const Sender: TCustomListBox;
+      const Item: TListBoxItem);
   private
     procedure TrocarAba(img: TImage);
     procedure AddCategoria(id_categoria: integer; categoria: string);
     procedure ListarCategorias;
     procedure TerminateCategoria(Sender: TObject);
+    procedure SelecionarCategoria(item: TListBoxItem);
 
     { Private declarations }
   public
@@ -97,6 +100,34 @@ begin
   ListBoxCategoria.AddObject(item);
 end;
 
+procedure TFormPrincipal.SelecionarCategoria(item: TListBoxItem);
+var
+  i : integer;
+  item_loop : TListBoxItem;
+  frame : TFrameCategoria;
+
+begin
+  //Deixar todos itens não selecionados
+  for I := 0 to ListBoxCategoria.Items.Count - 1 do
+  begin
+    item_Loop := ListBoxCategoria.ItemByIndex(i);
+
+    frame := TFrameCategoria(item_Loop.Components[0]);
+    frame.RectangleCategoria.Fill.Color := $FFFFFFFF;//Fundo branco
+    frame.RectangleCategoria.Stroke.Color := $FFB9B9B9; //Borda cinza;
+    frame.LabelCategoria.FontColor := $FF000000//Texto branco
+
+  end;
+
+  //Destacar item selecionado
+  frame := TFrameCategoria(item.Components[0]);
+  frame.RectangleCategoria.Fill.Color := $FF000000;//Fundo preto
+  frame.RectangleCategoria.Stroke.Color := $FFF57C00; //Borda laranja;
+  frame.LabelCategoria.FontColor := $FFFFFFFF; //Texto branco
+  frame.LabelCategoria.Font.Size := 16; //Aumentar fontSize
+
+end;
+
 procedure TFormPrincipal.TerminateCategoria(Sender: TObject);
 begin
   TLoading.Hide;
@@ -115,6 +146,11 @@ begin
   AddCategoria(1, 'Escolar');
   AddCategoria(1, 'Livros');
 
+  // Seleciona a primeira categoria
+  if ListBoxCategoria.Items.Count > 0 then
+  SelecionarCategoria(ListBoxCategoria.ItemByIndex(0));
+
+
 end;
 
 procedure TFormPrincipal.ListarCategorias;
@@ -129,6 +165,12 @@ begin
   end,
   TerminateCategoria);
 
+end;
+
+procedure TFormPrincipal.ListBoxCategoriaItemClick(const Sender: TCustomListBox;
+  const Item: TListBoxItem);
+begin
+  SelecionarCategoria(item);
 end;
 
 procedure TFormPrincipal.TrocarAba(img: TImage);
@@ -158,3 +200,10 @@ begin
 end;
 
 end.
+
+
+
+
+
+
+

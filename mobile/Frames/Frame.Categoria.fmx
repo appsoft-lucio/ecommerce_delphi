@@ -16,11 +16,11 @@ object FrameCategoria: TFrameCategoria
     Size.Height = 45.000000000000000000
     Size.PlatformDefault = False
     Stroke.Color = xFFB9B9B9
-    XRadius = 25.000000000000000000
-    YRadius = 25.000000000000000000
+    XRadius = 22.500000000000000000
+    YRadius = 22.500000000000000000
     object LabelCategoria: TLabel
       Align = Client
-      StyledSettings = [Family, FontColor]
+      StyledSettings = [Family]
       Size.Width = 106.000000000000000000
       Size.Height = 45.000000000000000000
       Size.PlatformDefault = False
