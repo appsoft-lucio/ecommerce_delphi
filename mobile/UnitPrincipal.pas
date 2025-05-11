@@ -82,7 +82,7 @@ implementation
 
 {$R *.fmx}
 
-uses Frame.Categoria;
+uses Frame.Categoria, Frame.Produto;
 
 procedure TFormPrincipal.AddCategoria(id_categoria: integer;
                                       categoria: string);
@@ -111,16 +111,22 @@ procedure TFormPrincipal.AddProduto(id_produto: integer;
                                       preco: double);
 var
   item : TListBoxItem;
+  frame : TFrameProduto;
 
 begin
   item:= TListBoxItem.Create(ListBoxProdutos);
   item.Selectable := false;
-  item.Text := nome + sLineBreak +
-               descricao + sLineBreak +
-               'Preço: R$ ' + FormatFloat('0.00', preco);
+  item.Text := '';
   item.Height := 110;
   item.Tag := id_produto;
 
+  frame := TFrameProduto.Create(item);
+  frame.LabelNomeProduto.Text := nome;
+  frame.LabelBreveDescricao.Text := descricao;
+  frame.LabelPreco.Text := FormatFloat('R$ #,##0,00', preco);
+  frame.ImageProduto.TagString := url_foto;
+
+  item.AddObject(frame);
   ListBoxProdutos.AddObject(item);
 end;
 
