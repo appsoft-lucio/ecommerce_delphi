@@ -117,7 +117,7 @@ begin
   item:= TListBoxItem.Create(ListBoxProdutos);
   item.Selectable := false;
   item.Text := '';
-  item.Height := 110;
+  item.Height := 230;
   item.Tag := id_produto;
 
   frame := TFrameProduto.Create(item);
