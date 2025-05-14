@@ -7,7 +7,7 @@ uses
   Frame.Categoria in 'Frames\Frame.Categoria.pas' {FrameCategoria: TFrame},
   Frame.Produto in 'Frames\Frame.Produto.pas' {FrameProduto: TFrame},
   uLoading in 'Utils\uLoading.pas',
-  uFanctions in 'Utils\uFanctions.pas';
+  uFunctions in 'Utils\uFunctions.pas';
 
 {$R *.res}
 
