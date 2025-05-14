@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.TabControl, FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, FMX.Ani,
-  FMX.Layouts, FMX.ListBox, uLoading;
+  FMX.Layouts, FMX.ListBox, uLoading, uFunctions;
 
 type
   TFormPrincipal = class(TForm)
@@ -69,6 +69,7 @@ type
     procedure TerminateProdutos(Sender: TObject);
     procedure AddProduto(id_produto: integer; nome, descricao,
       url_foto: string; preco: double);
+    procedure DownloadFoto(lb: TListBox);
 
     { Private declarations }
   public
@@ -83,6 +84,40 @@ implementation
 {$R *.fmx}
 
 uses Frame.Categoria, Frame.Produto;
+
+procedure TFormPrincipal.DownloadFoto(lb: TListBox);
+var
+        t : TThread;
+        foto : TBitmap;
+        frame : TFrameProduto;
+
+begin
+        //Carregar imagens...
+        T := TThread.CreateAnonymousThread(procedure
+        var
+                i : integer;
+        begin
+          for i := 0 to lb.Items.Count -1 do
+
+          begin
+            sleep(10);
+            frame := TFrameProduto(lb.ItemByIndex(i).Components[0]);
+
+            if frame.ImageProduto.TagString <> '' then
+            begin
+              foto := TBitmap.Create;
+              LoadImageFromURL(foto, frame.ImageProduto.TagString);
+
+              frame.ImageProduto.TagString := '';
+              frame.ImageProduto.Bitmap := foto;
+            end;
+
+          end;
+
+
+        end);
+        t.Start;
+end;
 
 procedure TFormPrincipal.AddCategoria(id_categoria: integer;
                                       categoria: string);
@@ -196,26 +231,29 @@ begin
     Exit;
   end;
 
-  AddProduto(1, 'Apple Airpods', '3º Geração de fones com som especial',
-              'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwQBAgUGB//EADYQAAICAAMECQEGBwEAAAAAAAABAgMEETEFEiFxExQiMjNBUWGRFWJygYKhwTVCU2Ox0eEj/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwD7iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIpXwTyTzfsszHT/Yn8DBMCHp/sT/AEMdY/tz/QYJwQ9Y+xMdPHzjNflAmBpCyM+68zcAAAAAAAAAAAAAAFPFYiEc3ZPdrjr7v0LbOZZh44i2KsfZi22vUsEP1RTbjhqJv3y/ZGlmIxWfbcoZ+2R1aq66o7sIKK9EQ7Tw1mLwNtOFxDw18o/+dqipbr8s09V6lFOiy1SUnNy9my1ibJRglF5Z+ZztnLG9Wo+o4ZUYl8LIRkpRzXDNNeT1XnxL+Iedefo+ARTlddGXZslnzJI4zEwWdlLmvXdaK+Gwu07dt9JY1h9nUQ4JbrliZteeu7Ffg2/Zce7wyWSA5tG0MPfNRjnXb5Z6P2OnTPpIJvUp4zBVXpzSUbFpJE+CbcW355EqrIAIAAAAAAAAAAAFG5dFe5eTX+i5PuvkaQSku0swOJhZ7Tq2rj7MXi6LNn2dH1OmFW7OrJdvefnmy/DFrPUms4SeRE58MuPyaGbrFOttPtLiV6LOksS8tSXf5jfy0zCJbMQori8iFYtN94zvtevybxk3o8gOfsL6lXs2Fe28XTisbvT3raKtyLWb3eHLI7GFhuVRz1aM1pShm1mZhwsyWmRFSgAgAAAAAAAAAADWfclyNKtFyJJ918iOrRAQ26srk9urIDURgAADeBobwAuVdwR8X8BV3WIeN+UipQAQAAAAAAAAAABifdfIjq0RJPuvkR1aLkBBd3nzICe7vMgNRGAAAN4GhvAC5T4b5iHjflFPhvmYh4z+6RUwAIAAAAAAAAAAAxLuvkRUvsx5ErK8JbjcH/LwA0t1ZXZJdLjwK7kaiN8zGZpvDeQEiZvDUg3iSEgL9PhvmK/FfIjqnlFoko4uUvJvJEqpgAQAAAAAAAAAAAIMRS7O1BpTXro+ZOAOLiHdW8rKbOcYuS/QqSxcU/P4PSgujzHWo+/wOtR9z04GjzCxUfclqvcnlCFkvuxb/Y9EBo51FN1mW+nXH31ZfjFRSSWSWiNgQAAAAAAAAAAAAAAAAAAAAAAAAAClicRjK7ZRpwErYLSSujHPh6MC6Dnda2hup/TJZ7zWXWI6cOP+fgz1raDf8NaWX9ePwB0Ac+WKx67mzZSy9b4r1/4SUX4ud0Y3YKVcOOc+ljJL8NQLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2Q==', 999);
+  AddProduto(1, 'Apple Airpods', '3ª Geração de fones com som especial',
+              'https://live-produtos.s3.us-east-1.amazonaws.com/fones.png', 999);
   AddProduto(2, 'JBL Tune 510BT', '5ª Geração com graves potentes e bateria de 40h',
-              'http://servidor/jbl510bt.png', 299);
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT8oKof8mgZO5B1JZIGVm_IVWNT5NoO-IyhHsxBqjqRHYKNIxerBRrqLXsy6iG4obFV9T4iwsceHrcZjOeOxAGkHDhiDHMx2c1XFJR_Gat9bogrkiy0-AnHiRVafx7JhECaFn1QTm_Z1w&usqp=CAc', 299);
   AddProduto(3, 'Sony WH-1000XM5', 'Cancelamento de ruído inteligente e som Hi-Res',
-              'http://servidor/sonyxm5.png', 1499);
+              'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTEXoJ_EwYpseny-DJQcm3Hsj3D7hlodKiSZY9aUXpH0nOj4s_ulRXU0g4od5HHtu_ooEwjqaolsMKzViEghyq126mYySoO7i7VDuOw684UNkOUPO3P5xGqe1B0tqiVVWNTrQDmRpw&usqp=CAc', 1499);
   AddProduto(4, 'Samsung Galaxy Buds 2', '2ª geração de fones sem fio com ajuste automático',
-              'http://servidor/buds2.png', 599);
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLr175HyO4Pm5VJn45TrgrhE_t3gSDJGhi0YpLZbhWRF3kK-0gaPvuacZimwDPIPlVFNHx7rc6aZIH-KAWgtEzfSf6gzqn3_V7JcyWRf1EUNXWZGLMNKoDVpeIFj3NgAVQROgGUxM&usqp=CAc', 599);
   AddProduto(5, 'Logitech G435', 'Headset gamer leve com som estéreo e microfone embutido',
-              'http://servidor/g435.png', 449);
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRtIWgku4bxOncCnDkobu8HKAcsMzG7bwlfP4ACLTLScxEzXjIp3PZ51Z3k_tsp338EhXZBqmAyl1zPJOhaA_DT6-Ck7pwWVfGMDrc814rjD_a2IJ8jty_yEXI8ommGvKKxi9Y_5Q&usqp=CAc', 449);
   AddProduto(6, 'Bose QuietComfort 45', 'Áudio imersivo com cancelamento ativo de ruído',
-              'http://servidor/boseqc45.png', 1799);
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRACuFkTn-euU6nx5MQ-SGSzaLQRjIhfcZsaHCxN2Y5LgvaY6IlopUxiGY4tYxvMrp1u0wjP7GzNInxqOK0wnj3Hm411CL2l_b-5ODEF3SPrGuzG3lWXU5VrOlB8d641A&usqp=CAc', 1799);
   AddProduto(7, 'Philips SHP9600', 'Som aberto de estúdio com drivers de 50mm',
-              'http://servidor/shp9600.png', 599);
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTCPJEnp9j-waC780tnlRnGQySZnIXT1OeCTJX7BlthvrARKAU4MD9NFS06Xv9l4rupSQdqULNd2JbMRM250FgUbPnAlJ2Ig-ehfqdxlkpdwQHDtUOqXO_pfIgAd4aQv21lVA5QWw&usqp=CAc', 599);
   AddProduto(8, 'Edifier R1700BT', 'Caixas de som Bluetooth com áudio balanceado e controle remoto',
-              'http://servidor/r1700bt.png', 749);
+              'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSZ_mOVhVDmj59Wt9ks7H7uhQetqTUbAsGflyb3VM8XvgH_T9jvyTjqODIsGoHXSljPZUwcRmH2Fs5Kn4ekdWrVL77Ydyn0QxuoucJQKz_F2aocK86yAFhGKTlIoqUdSD3sO6hnMdA&usqp=CAc', 749);
   AddProduto(9, 'Xiaomi Redmi Buds 4', 'Conforto com som dinâmico e estojo com carregamento rápido',
-              'http://servidor/redmibuds4.png', 279);
+              'https://http2.mlstatic.com/D_747259-MLA84199264912_052025-C.jpg', 279);
   AddProduto(10, 'HyperX Cloud Alpha', 'Headset com estrutura durável e drivers duplos para melhor separação sonora',
-              'http://servidor/cloudalpha.png', 699);
+              'https://http2.mlstatic.com/D_618368-MLU77443691234_072024-C.jpg', 699);
+
+
+  DownloadFoto(ListBoxProdutos);
 
 end;
 
