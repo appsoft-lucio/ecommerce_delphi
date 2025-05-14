@@ -95,7 +95,7 @@ begin
   item:= TListBoxItem.Create(ListBoxCategoria);
   item.Selectable := false;
   item.Text := '';
-  item.Width := 105;
+  item.Width := 100;
   item.Tag := id_categoria;
 
   //Frame
@@ -123,7 +123,7 @@ begin
   frame := TFrameProduto.Create(item);
   frame.LabelNomeProduto.Text := nome;
   frame.LabelBreveDescricao.Text := descricao;
-  frame.LabelPreco.Text := FormatFloat('R$ #,##0,00', preco);
+  frame.LabelPreco.Text := FormatFloat('R$ #,##0.00', preco);
   frame.ImageProduto.TagString := url_foto;
 
   item.AddObject(frame);
@@ -197,7 +197,7 @@ begin
   end;
 
   AddProduto(1, 'Apple Airpods', '3º Geração de fones com som especial',
-              'http://servidor/foto.png', 999);
+              'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwQBAgUGB//EADYQAAICAAMECQEGBwEAAAAAAAABAgMEETEFEiFxExQiMjNBUWGRFWJygYKhwTVCU2Ox0eEj/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwD7iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIpXwTyTzfsszHT/Yn8DBMCHp/sT/AEMdY/tz/QYJwQ9Y+xMdPHzjNflAmBpCyM+68zcAAAAAAAAAAAAAAFPFYiEc3ZPdrjr7v0LbOZZh44i2KsfZi22vUsEP1RTbjhqJv3y/ZGlmIxWfbcoZ+2R1aq66o7sIKK9EQ7Tw1mLwNtOFxDw18o/+dqipbr8s09V6lFOiy1SUnNy9my1ibJRglF5Z+ZztnLG9Wo+o4ZUYl8LIRkpRzXDNNeT1XnxL+Iedefo+ARTlddGXZslnzJI4zEwWdlLmvXdaK+Gwu07dt9JY1h9nUQ4JbrliZteeu7Ffg2/Zce7wyWSA5tG0MPfNRjnXb5Z6P2OnTPpIJvUp4zBVXpzSUbFpJE+CbcW355EqrIAIAAAAAAAAAAAFG5dFe5eTX+i5PuvkaQSku0swOJhZ7Tq2rj7MXi6LNn2dH1OmFW7OrJdvefnmy/DFrPUms4SeRE58MuPyaGbrFOttPtLiV6LOksS8tSXf5jfy0zCJbMQori8iFYtN94zvtevybxk3o8gOfsL6lXs2Fe28XTisbvT3raKtyLWb3eHLI7GFhuVRz1aM1pShm1mZhwsyWmRFSgAgAAAAAAAAAADWfclyNKtFyJJ918iOrRAQ26srk9urIDURgAADeBobwAuVdwR8X8BV3WIeN+UipQAQAAAAAAAAAABifdfIjq0RJPuvkR1aLkBBd3nzICe7vMgNRGAAAN4GhvAC5T4b5iHjflFPhvmYh4z+6RUwAIAAAAAAAAAAAxLuvkRUvsx5ErK8JbjcH/LwA0t1ZXZJdLjwK7kaiN8zGZpvDeQEiZvDUg3iSEgL9PhvmK/FfIjqnlFoko4uUvJvJEqpgAQAAAAAAAAAAAIMRS7O1BpTXro+ZOAOLiHdW8rKbOcYuS/QqSxcU/P4PSgujzHWo+/wOtR9z04GjzCxUfclqvcnlCFkvuxb/Y9EBo51FN1mW+nXH31ZfjFRSSWSWiNgQAAAAAAAAAAAAAAAAAAAAAAAAAClicRjK7ZRpwErYLSSujHPh6MC6Dnda2hup/TJZ7zWXWI6cOP+fgz1raDf8NaWX9ePwB0Ac+WKx67mzZSy9b4r1/4SUX4ud0Y3YKVcOOc+ljJL8NQLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2Q==', 999);
   AddProduto(2, 'JBL Tune 510BT', '5ª Geração com graves potentes e bateria de 40h',
               'http://servidor/jbl510bt.png', 299);
   AddProduto(3, 'Sony WH-1000XM5', 'Cancelamento de ruído inteligente e som Hi-Res',
@@ -241,7 +241,7 @@ begin
   TLoading.ExecuteThread(Procedure
   begin
     //Acesso ao servido
-    sleep(500);
+    sleep(300);
   end,
   TerminateProdutos);
 
