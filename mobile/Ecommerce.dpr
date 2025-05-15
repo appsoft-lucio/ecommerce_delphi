@@ -12,6 +12,7 @@ uses
 {$R *.res}
 
 begin
+  ReportMemoryLeaksOnShutdown := true;
   Application.Initialize;
   Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.Run;
