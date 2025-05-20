@@ -118,7 +118,7 @@ begin
           for i := 0 to lb.Items.Count -1 do
 
           begin
-            sleep(10);
+            //sleep(10);
             frame := TFrameProduto(lb.ItemByIndex(i).Components[0]);
 
             if frame.ImageProduto.TagString <> '' then
@@ -218,9 +218,12 @@ begin
         TListItemImage(item.objects.FindDrawable('ImageQtd')).Bitmap := BtnAddQtd.Bitmap;
         TListItemImage(item.objects.FindDrawable('ImageLixeira')).Bitmap := ImageIconLixeira.Bitmap;
         TListItemText(item.objects.FindDrawable('TextNome')).Text := nome;
-        TListItemText(item.objects.FindDrawable('TextQtd')).Text := qtd.ToString +
+        TListItemText(item.objects.FindDrawable('TextUnidade')).Text := qtd.ToString +
                                                                       FormatFloat('x R$ #,##0.00', preco);
         TListItemText(item.objects.FindDrawable('TextTotal')).Text := FormatFloat('R$ #,##0.00', qtd * preco);
+        TListItemText(item.objects.FindDrawable('TextQtd')).Text := qtd.ToString;
+        TListItemText(item.objects.FindDrawable('TextMenus')).Text := '-';
+        TListItemText(item.objects.FindDrawable('TextMais')).Text := '+';
 end;
 
 procedure TFormPrincipal.SelecionarCategoria(item: TListBoxItem);
@@ -379,7 +382,7 @@ begin
   TLoading.ExecuteThread(Procedure
   begin
     //Acesso ao servido
-    sleep(500);
+    //sleep(500);
   end,
   TerminateCategoria);
 
@@ -393,7 +396,7 @@ begin
   TLoading.ExecuteThread(Procedure
   begin
     //Acesso ao servido
-    sleep(300);
+    //sleep(300);
   end,
   TerminateProdutos);
 
@@ -407,7 +410,7 @@ begin
   TLoading.ExecuteThread(Procedure
   begin
     //Acesso ao servido
-    sleep(500);
+    //sleep(500);
   end,
   TerminateDesejos);
 
@@ -421,7 +424,7 @@ begin
   TLoading.ExecuteThread(Procedure
   begin
     //Acesso ao servido
-    sleep(10);
+    //sleep(10);
   end,
   TerminateCart);
 
