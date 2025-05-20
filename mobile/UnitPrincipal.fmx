@@ -3406,7 +3406,7 @@ object FormPrincipal: TFormPrincipal
         Align = Client
         Padding.Bottom = 60.000000000000000000
         Size.Width = 310.000000000000000000
-        Size.Height = 472.000000000000000000
+        Size.Height = 337.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         ItemAppearance.ItemHeight = 115
@@ -3518,6 +3518,37 @@ object FormPrincipal: TFormPrincipal
           end>
         CanSwipeDelete = False
         ShowSelection = False
+      end
+      object RectangleFinalizarCompra: TRectangle
+        Align = Bottom
+        Fill.Color = xFFF57C00
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Margins.Bottom = 90.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 392.000000000000000000
+        Size.Width = 280.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object SpeedButtonFinalizarCompra: TSpeedButton
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Top = -10.000000000000000000
+          Margins.Bottom = -10.000000000000000000
+          Size.Width = 280.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Finalizar Compra'
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.Trimming = None
+        end
       end
     end
     object TabItem4: TTabItem
@@ -4660,6 +4691,10 @@ object FormPrincipal: TFormPrincipal
       Size.Height = 10.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
+    end
+    object SizeGrip1: TSizeGrip
+      Position.X = 43.000000000000000000
+      Position.Y = 55.000000000000000000
     end
   end
 end

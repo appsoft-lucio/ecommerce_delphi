@@ -60,6 +60,9 @@ type
     ImageIconLixeira: TImage;
     ListViewCart: TListView;
     BtnAddQtd: TImage;
+    RectangleFinalizarCompra: TRectangle;
+    SizeGrip1: TSizeGrip;
+    SpeedButtonFinalizarCompra: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
