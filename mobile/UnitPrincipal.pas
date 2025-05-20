@@ -19,7 +19,7 @@ type
     CircleSelecao: TCircle;
     TabControl1: TTabControl;
     TabHomer: TTabItem;
-    TabItem2: TTabItem;
+    TabDesejos: TTabItem;
     TabItem3: TTabItem;
     TabItem4: TTabItem;
     RectangleFundoAba1: TRectangle;
@@ -65,6 +65,8 @@ type
     procedure ListBoxCategoriaItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
     procedure FormResize(Sender: TObject);
+    procedure ListBoxProdutosItemClick(const Sender: TCustomListBox;
+      const Item: TListBoxItem);
   private
     procedure TrocarAba(img: TImage);
     procedure AddCategoria(id_categoria: integer; categoria: string);
@@ -81,6 +83,8 @@ type
                                 preco: double);
     procedure ListarDesejos;
     procedure TerminateDesejos(Sender: TObject);
+    procedure AddListViewCart(id_item, id_produto, qtd: integer; nome,
+      descricao, url_foto: string; preco: double);
 
     { Private declarations }
   public
@@ -179,6 +183,24 @@ begin
 end;
 
 procedure TFormPrincipal.AddListViewDesejo(id_favorito, id_produto: integer;
+                                nome, descricao, url_foto: string;
+                                preco: double);
+var
+        item : TListViewItem;
+
+begin
+        item := ListViewDesejos.items.Add;
+        item.Height := 115;
+
+        TListItemImage(item.objects.FindDrawable('ImageProduto')).Bitmap := ImageIconFoto.Bitmap;
+        TListItemImage(item.objects.FindDrawable('ImageProduto')).TagString := url_foto;
+        TListItemImage(item.objects.FindDrawable('ImageAdicionarCarrinho')).Bitmap := ImageIconAdicionarCarrinho.Bitmap;
+        TListItemImage(item.objects.FindDrawable('ImageLixeira')).Bitmap := ImageIconLixeira.Bitmap;
+        TListItemText(item.objects.FindDrawable('TextNome')).Text := nome;
+        TListItemText(item.objects.FindDrawable('TextPreco')).Text := FormatFloat('R$ #,##0.00', preco);
+end;
+
+procedure TFormPrincipal.AddListViewCart(id_item, id_produto, qtd: integer;
                                 nome, descricao, url_foto: string;
                                 preco: double);
 var
@@ -362,6 +384,12 @@ procedure TFormPrincipal.ListBoxCategoriaItemClick(const Sender: TCustomListBox;
   const Item: TListBoxItem);
 begin
   SelecionarCategoria(item);
+end;
+
+procedure TFormPrincipal.ListBoxProdutosItemClick(const Sender: TCustomListBox;
+  const Item: TListBoxItem);
+begin
+        showmessage('Eu sou o produto:' + Item.Tag.ToString);
 end;
 
 procedure TFormPrincipal.TrocarAba(img: TImage);

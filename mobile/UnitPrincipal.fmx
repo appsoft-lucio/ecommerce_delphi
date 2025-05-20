@@ -23,7 +23,7 @@ object FormPrincipal: TFormPrincipal
     Size.Height = 571.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
     TabPosition = Top
     Sizes = (
@@ -40,7 +40,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -121,12 +121,13 @@ object FormPrincipal: TFormPrincipal
           DefaultItemStyles.ItemStyle = ''
           DefaultItemStyles.GroupHeaderStyle = ''
           DefaultItemStyles.GroupFooterStyle = ''
+          OnItemClick = ListBoxProdutosItemClick
           Viewport.Width = 310.000000000000000000
           Viewport.Height = 387.000000000000000000
         end
       end
     end
-    object TabItem2: TTabItem
+    object TabDesejos: TTabItem
       CustomIcon = <
         item
         end>
@@ -137,7 +138,7 @@ object FormPrincipal: TFormPrincipal
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'TabItem2'
+      Text = 'TabDesejos'
       ExplicitSize.cx = 69.000000000000000000
       ExplicitSize.cy = 26.000000000000000000
       object Rectangle1: TRectangle
@@ -3344,7 +3345,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -3426,8 +3427,8 @@ object FormPrincipal: TFormPrincipal
           item
             AppearanceObjectName = 'ImageQtd'
             AppearanceClassName = 'TImageObjectAppearance'
-            Appearance.Width = 100.000000000000000000
-            Appearance.Height = 30.000000000000000000
+            Appearance.Width = 125.000000000000000000
+            Appearance.Height = 40.000000000000000000
             Appearance.PlaceOffset.X = 64.000000000000000000
             Appearance.PlaceOffset.Y = 67.000000000000000000
           end
