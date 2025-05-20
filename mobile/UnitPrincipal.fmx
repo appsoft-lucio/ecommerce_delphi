@@ -23,7 +23,7 @@ object FormPrincipal: TFormPrincipal
     Size.Height = 571.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     TabPosition = Top
     Sizes = (
@@ -40,7 +40,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -3340,18 +3340,18 @@ object FormPrincipal: TFormPrincipal
         Visible = False
       end
     end
-    object TabItem3: TTabItem
+    object TabCart: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'TabItem3'
+      Text = 'TabCart'
       ExplicitSize.cx = 69.000000000000000000
       ExplicitSize.cy = 26.000000000000000000
       object Rectangle2: TRectangle

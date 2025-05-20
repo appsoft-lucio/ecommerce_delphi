@@ -20,7 +20,7 @@ type
     TabControl1: TTabControl;
     TabHomer: TTabItem;
     TabDesejos: TTabItem;
-    TabItem3: TTabItem;
+    TabCart: TTabItem;
     TabItem4: TTabItem;
     RectangleFundoAba1: TRectangle;
     EditPesquizarAba1: TEdit;
