@@ -23,7 +23,7 @@ object FormPrincipal: TFormPrincipal
     Size.Height = 571.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 1
     TabPosition = Top
     Sizes = (
@@ -110,8 +110,9 @@ object FormPrincipal: TFormPrincipal
         end
         object ListBoxProdutos: TListBox
           Align = Client
+          Margins.Bottom = 85.000000000000000000
           Size.Width = 310.000000000000000000
-          Size.Height = 387.000000000000000000
+          Size.Height = 302.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'transparentlistboxstyle'
           TabOrder = 1
@@ -123,7 +124,7 @@ object FormPrincipal: TFormPrincipal
           DefaultItemStyles.GroupFooterStyle = ''
           OnItemClick = ListBoxProdutosItemClick
           Viewport.Width = 310.000000000000000000
-          Viewport.Height = 387.000000000000000000
+          Viewport.Height = 302.000000000000000000
         end
       end
     end
@@ -132,7 +133,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -170,9 +171,10 @@ object FormPrincipal: TFormPrincipal
         ItemSpaces.Left = 0.000000000000000000
         ItemSpaces.Right = 0.000000000000000000
         Align = Client
+        Margins.Bottom = 85.000000000000000000
         Padding.Bottom = 60.000000000000000000
         Size.Width = 310.000000000000000000
-        Size.Height = 472.000000000000000000
+        Size.Height = 387.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         ItemAppearance.ItemHeight = 115
@@ -3366,7 +3368,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 77.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -3406,7 +3408,7 @@ object FormPrincipal: TFormPrincipal
         Align = Client
         Padding.Bottom = 60.000000000000000000
         Size.Width = 310.000000000000000000
-        Size.Height = 337.000000000000000000
+        Size.Height = 307.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         ItemAppearance.ItemHeight = 115
@@ -3548,6 +3550,42 @@ object FormPrincipal: TFormPrincipal
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.FontColor = claWhite
           TextSettings.Trimming = None
+        end
+      end
+      object LayoutTotal: TLayout
+        Align = Bottom
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 362.000000000000000000
+        Size.Width = 280.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object LabelTotal: TLabel
+          Align = Left
+          StyledSettings = [Family, FontColor]
+          Size.Width = 140.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Total do itens'
+          TabOrder = 1
+        end
+        object LabelValorTotal: TLabel
+          Align = Right
+          StyledSettings = [Family, FontColor]
+          Position.X = 140.000000000000000000
+          Size.Width = 140.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Trailing
+          Text = 'R$ 0,00'
+          TabOrder = 0
         end
       end
     end
@@ -4560,7 +4598,7 @@ object FormPrincipal: TFormPrincipal
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       OnClick = HomerClick
-      object LabelCarrinho: TLabel
+      object LabelQtdCart: TLabel
         Align = Top
         StyledSettings = [Family]
         Margins.Left = 5.000000000000000000

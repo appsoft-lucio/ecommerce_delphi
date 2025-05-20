@@ -30,7 +30,7 @@ type
     Rectangle2: TRectangle;
     Label2: TLabel;
     LabelConfiguracoes: TLabel;
-    LabelCarrinho: TLabel;
+    LabelQtdCart: TLabel;
     LabelCatao: TLabel;
     ImageCartao: TImage;
     RectangleCartoes: TRectangle;
@@ -63,6 +63,9 @@ type
     RectangleFinalizarCompra: TRectangle;
     SizeGrip1: TSizeGrip;
     SpeedButtonFinalizarCompra: TSpeedButton;
+    LayoutTotal: TLayout;
+    LabelTotal: TLabel;
+    LabelValorTotal: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -91,6 +94,7 @@ type
       descricao, url_foto: string; preco: double);
     procedure ListarCart;
     procedure TerminateCart(Sender: TObject);
+    procedure RecalculaQtdCart;
 
     { Private declarations }
   public
@@ -372,7 +376,7 @@ begin
               'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRtIWgku4bxOncCnDkobu8HKAcsMzG7bwlfP4ACLTLScxEzXjIp3PZ51Z3k_tsp338EhXZBqmAyl1zPJOhaA_DT6-Ck7pwWVfGMDrc814rjD_a2IJ8jty_yEXI8ommGvKKxi9Y_5Q&usqp=CAc', 449);
 
 
-
+  RecalculaQtdCart;
   DownloadFotoLv(ListViewCart, 'ImageProduto');
 
 end;
@@ -433,6 +437,11 @@ begin
 
 end;
 
+procedure TFormPrincipal.RecalculaQtdCart;
+begin
+        LabelQtdCart.Text := ListViewCart.Items.Count.ToString;
+end;
+
 procedure TFormPrincipal.ListBoxCategoriaItemClick(const Sender: TCustomListBox;
   const Item: TListBoxItem);
 begin
@@ -479,6 +488,7 @@ end;
 procedure TFormPrincipal.FormShow(Sender: TObject);
 begin
   ListarCategorias;
+  RecalculaQtdCart;
 end;
 
 end.
