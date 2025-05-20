@@ -58,7 +58,8 @@ type
     ImageIconFoto: TImage;
     ImageIconAdicionarCarrinho: TImage;
     ImageIconLixeira: TImage;
-    ListViewCompras: TListView;
+    ListViewCart: TListView;
+    BtnAddQtd: TImage;
     procedure FormCreate(Sender: TObject);
     procedure HomerClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -85,6 +86,8 @@ type
     procedure TerminateDesejos(Sender: TObject);
     procedure AddListViewCart(id_item, id_produto, qtd: integer; nome,
       descricao, url_foto: string; preco: double);
+    procedure ListarCart;
+    procedure TerminateCart(Sender: TObject);
 
     { Private declarations }
   public
@@ -207,15 +210,17 @@ var
         item : TListViewItem;
 
 begin
-        item := ListViewDesejos.items.Add;
+        item := ListViewCart.items.Add;
         item.Height := 115;
 
         TListItemImage(item.objects.FindDrawable('ImageProduto')).Bitmap := ImageIconFoto.Bitmap;
         TListItemImage(item.objects.FindDrawable('ImageProduto')).TagString := url_foto;
-        TListItemImage(item.objects.FindDrawable('ImageAdicionarCarrinho')).Bitmap := ImageIconAdicionarCarrinho.Bitmap;
+        TListItemImage(item.objects.FindDrawable('ImageQtd')).Bitmap := BtnAddQtd.Bitmap;
         TListItemImage(item.objects.FindDrawable('ImageLixeira')).Bitmap := ImageIconLixeira.Bitmap;
         TListItemText(item.objects.FindDrawable('TextNome')).Text := nome;
-        TListItemText(item.objects.FindDrawable('TextPreco')).Text := FormatFloat('R$ #,##0.00', preco);
+        TListItemText(item.objects.FindDrawable('TextTotal')).Text := qtd.ToString +
+                                                                      FormatFloat('x R$ #,##0.00', preco);
+        TListItemText(item.objects.FindDrawable('TextQtd')).Text := FormatFloat('R$ #,##0.00', qtd * preco);
 end;
 
 procedure TFormPrincipal.SelecionarCategoria(item: TListBoxItem);
@@ -338,6 +343,34 @@ begin
 
 end;
 
+procedure TFormPrincipal.TerminateCart(Sender: TObject);
+begin
+  TLoading.Hide;
+
+  //Se deu erro na thread....
+  if Assigned(TThread(Sender).FatalException) then
+  begin
+    showmessage(Exception(TThread(sender).FatalException).Message);
+    Exit;
+  end;
+
+  AddListViewCart(1, 1, 1, 'Apple Airpods', '3ª Geração de fones com som especial',
+              'https://live-produtos.s3.us-east-1.amazonaws.com/fones.png', 999);
+  AddListViewCart(2, 2, 2, 'JBL Tune 510BT', '5ª Geração com graves potentes e bateria de 40h',
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT8oKof8mgZO5B1JZIGVm_IVWNT5NoO-IyhHsxBqjqRHYKNIxerBRrqLXsy6iG4obFV9T4iwsceHrcZjOeOxAGkHDhiDHMx2c1XFJR_Gat9bogrkiy0-AnHiRVafx7JhECaFn1QTm_Z1w&usqp=CAc', 299);
+  AddListViewCart(3, 3, 3, 'Sony WH-1000XM5', 'Cancelamento de ruído inteligente e som Hi-Res',
+              'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTEXoJ_EwYpseny-DJQcm3Hsj3D7hlodKiSZY9aUXpH0nOj4s_ulRXU0g4od5HHtu_ooEwjqaolsMKzViEghyq126mYySoO7i7VDuOw684UNkOUPO3P5xGqe1B0tqiVVWNTrQDmRpw&usqp=CAc', 1499);
+  AddListViewCart(4, 4, 4, 'Samsung Galaxy Buds 2', '2ª geração de fones sem fio com ajuste automático',
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLr175HyO4Pm5VJn45TrgrhE_t3gSDJGhi0YpLZbhWRF3kK-0gaPvuacZimwDPIPlVFNHx7rc6aZIH-KAWgtEzfSf6gzqn3_V7JcyWRf1EUNXWZGLMNKoDVpeIFj3NgAVQROgGUxM&usqp=CAc', 599);
+  AddListViewCart(5, 5, 5, 'Logitech G435', 'Headset gamer leve com som estéreo e microfone embutido',
+              'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRtIWgku4bxOncCnDkobu8HKAcsMzG7bwlfP4ACLTLScxEzXjIp3PZ51Z3k_tsp338EhXZBqmAyl1zPJOhaA_DT6-Ck7pwWVfGMDrc814rjD_a2IJ8jty_yEXI8ommGvKKxi9Y_5Q&usqp=CAc', 449);
+
+
+
+  DownloadFotoLv(ListViewCart, 'ImageProduto');
+
+end;
+
 procedure TFormPrincipal.ListarCategorias;
 begin
   TLoading.Show(FormPrincipal, 'Carregando');
@@ -380,6 +413,20 @@ begin
 
 end;
 
+procedure TFormPrincipal.ListarCart;
+begin
+  TLoading.Show(FormPrincipal, 'Carregando');
+  ListViewCart.Items.Clear;
+
+  TLoading.ExecuteThread(Procedure
+  begin
+    //Acesso ao servido
+    sleep(10);
+  end,
+  TerminateCart);
+
+end;
+
 procedure TFormPrincipal.ListBoxCategoriaItemClick(const Sender: TCustomListBox;
   const Item: TListBoxItem);
 begin
@@ -401,7 +448,9 @@ begin
   TabControl1.GotoVisibleTab(img.tag);
 
   if img.Tag = 1 then
-  ListarDesejos;
+    ListarDesejos
+  else if img.Tag = 2 then
+    ListarCart;
 
 end;
 

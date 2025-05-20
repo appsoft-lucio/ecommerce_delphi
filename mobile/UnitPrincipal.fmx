@@ -988,7 +988,7 @@ object FormPrincipal: TFormPrincipal
               AE426082}
             FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\produto-sem-imagem.png'
           end>
-        Position.X = 40.000000000000000000
+        Position.X = 19.000000000000000000
         Position.Y = 256.000000000000000000
         Visible = False
       end
@@ -1044,7 +1044,7 @@ object FormPrincipal: TFormPrincipal
               6082}
             FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\btn-add-carrinho.png'
           end>
-        Position.X = 120.000000000000000000
+        Position.X = 88.000000000000000000
         Position.Y = 256.000000000000000000
         Visible = False
       end
@@ -3335,7 +3335,28 @@ object FormPrincipal: TFormPrincipal
               0049454E44AE426082}
             FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\lixeira.png'
           end>
-        Position.X = 200.000000000000000000
+        Position.X = 154.000000000000000000
+        Position.Y = 256.000000000000000000
+        Visible = False
+      end
+      object BtnAddQtd: TImage
+        MultiResBitmap.Height = 40
+        MultiResBitmap.Width = 109
+        MultiResBitmap = <
+          item
+            Width = 109
+            Height = 40
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000006D000000280806000000F46D74
+              890000000473424954080808087C0864880000007B49444154789CEDD1C109C0
+              2000C040EDDCAEEDDBCEE04B0277130432F71A6790F2BD0EE09E6941A6059916
+              645A906941A6059916645A906941A6059916645A906941A6059916645A906941
+              A6059916645A906941A6059916645A906941A6059916645A906941A605991664
+              5A906941A6059916645A906941A605FD637E02C0468C47830000000049454E44
+              AE426082}
+            FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\btn-add-qtd.png'
+          end>
+        Position.X = 223.000000000000000000
         Position.Y = 256.000000000000000000
         Visible = False
       end
@@ -3375,7 +3396,7 @@ object FormPrincipal: TFormPrincipal
           TabOrder = 0
         end
       end
-      object ListViewCompras: TListView
+      object ListViewCart: TListView
         ItemAppearanceClassName = 'TDynamicAppearance'
         ItemEditAppearanceClassName = 'TDynamicAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
@@ -3404,7 +3425,7 @@ object FormPrincipal: TFormPrincipal
             Appearance.PlaceOffset.Y = 8.000000000000000000
           end
           item
-            AppearanceObjectName = 'TextQuantidade'
+            AppearanceObjectName = 'TextQtd'
             AppearanceClassName = 'TTextObjectAppearance'
             Appearance.Font.Family = 'Roboto'
             Appearance.Font.Size = 14.000000000000000000
