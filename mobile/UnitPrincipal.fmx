@@ -3415,11 +3415,10 @@ object FormPrincipal: TFormPrincipal
             AppearanceObjectName = 'TextNome'
             AppearanceClassName = 'TTextObjectAppearance'
             Appearance.Font.Family = 'Roboto'
-            Appearance.Font.Size = 14.000000000000000000
             Appearance.Font.StyleExt = {00070000000000000004000000}
             Appearance.TextAlign = Leading
             Appearance.TextColor = claBlack
-            Appearance.Width = 153.000000000000000000
+            Appearance.Width = 145.000000000000000000
             Appearance.Height = 25.000000000000000000
             Appearance.PlaceOffset.X = 64.000000000000000000
             Appearance.PlaceOffset.Y = 8.000000000000000000
@@ -3428,7 +3427,6 @@ object FormPrincipal: TFormPrincipal
             AppearanceObjectName = 'TextQtd'
             AppearanceClassName = 'TTextObjectAppearance'
             Appearance.Font.Family = 'Roboto'
-            Appearance.Font.Size = 14.000000000000000000
             Appearance.Font.StyleExt = {00070000000000000004000000}
             Appearance.TextAlign = Leading
             Appearance.TextColor = xFFB9B9B9

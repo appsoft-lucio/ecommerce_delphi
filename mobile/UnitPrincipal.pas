@@ -218,9 +218,9 @@ begin
         TListItemImage(item.objects.FindDrawable('ImageQtd')).Bitmap := BtnAddQtd.Bitmap;
         TListItemImage(item.objects.FindDrawable('ImageLixeira')).Bitmap := ImageIconLixeira.Bitmap;
         TListItemText(item.objects.FindDrawable('TextNome')).Text := nome;
-        TListItemText(item.objects.FindDrawable('TextTotal')).Text := qtd.ToString +
+        TListItemText(item.objects.FindDrawable('TextQtd')).Text := qtd.ToString +
                                                                       FormatFloat('x R$ #,##0.00', preco);
-        TListItemText(item.objects.FindDrawable('TextQtd')).Text := FormatFloat('R$ #,##0.00', qtd * preco);
+        TListItemText(item.objects.FindDrawable('TextTotal')).Text := FormatFloat('R$ #,##0.00', qtd * preco);
 end;
 
 procedure TFormPrincipal.SelecionarCategoria(item: TListBoxItem);
