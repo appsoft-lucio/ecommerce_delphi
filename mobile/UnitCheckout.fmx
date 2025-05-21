@@ -107,7 +107,7 @@ object FormCheckout: TFormCheckout
       TextSettings.Trimming = None
     end
   end
-  object Layout1: TLayout
+  object LayoutDetalheDoPedido: TLayout
     Align = Client
     Margins.Left = 15.000000000000000000
     Margins.Top = 10.000000000000000000
@@ -117,7 +117,7 @@ object FormCheckout: TFormCheckout
     Size.Height = 550.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object Label1: TLabel
+    object LabelEnderecoEntrega: TLabel
       Align = Top
       StyledSettings = [FontColor]
       Size.Width = 350.000000000000000000

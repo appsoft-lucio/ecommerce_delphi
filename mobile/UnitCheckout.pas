@@ -14,8 +14,8 @@ type
     LabelFinalizarPedido: TLabel;
     RectangleFinalizar: TRectangle;
     SpeedButtonFinalizarPedido: TSpeedButton;
-    Layout1: TLayout;
-    Label1: TLabel;
+    LayoutDetalheDoPedido: TLayout;
+    LabelEnderecoEntrega: TLabel;
     RectangleEndereco: TRectangle;
     Label2: TLabel;
     Image1: TImage;
