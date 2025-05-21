@@ -5,17 +5,19 @@ object FormCheckout: TFormCheckout
   ClientHeight = 670
   ClientWidth = 380
   Fill.Kind = Solid
+  Position = MainFormCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   DesignerMasterStyle = 0
-  object Layout1: TLayout
+  object LayoutFinalizarPedido: TLayout
     Align = Top
     Size.Width = 380.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object Label1: TLabel
+    object LabelFinalizarPedido: TLabel
       Align = Contents
       StyledSettings = [FontColor]
       Size.Width = 380.000000000000000000
@@ -63,15 +65,18 @@ object FormCheckout: TFormCheckout
           FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\back.png'
         end>
       Align = Left
+      Cursor = crHandPoint
       Margins.Left = 5.000000000000000000
       Position.X = 5.000000000000000000
       Size.Width = 40.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
+      OnClick = ImageRetornarClick
     end
   end
-  object RectangleFinalizarPedido: TRectangle
+  object RectangleFinalizar: TRectangle
     Align = Bottom
+    Cursor = crHandPoint
     Fill.Color = xFFF57C00
     Margins.Left = 15.000000000000000000
     Margins.Top = 5.000000000000000000
@@ -87,6 +92,7 @@ object FormCheckout: TFormCheckout
     YRadius = 8.000000000000000000
     object SpeedButtonFinalizarPedido: TSpeedButton
       Align = Client
+      Cursor = crHandPoint
       StyledSettings = [Family]
       Margins.Top = -10.000000000000000000
       Margins.Bottom = -10.000000000000000000
@@ -99,6 +105,328 @@ object FormCheckout: TFormCheckout
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
       TextSettings.Trimming = None
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Margins.Left = 15.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 15.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 350.000000000000000000
+    Size.Height = 550.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Label1: TLabel
+      Align = Top
+      StyledSettings = [FontColor]
+      Size.Width = 350.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Endere'#231'o de entrega'
+      TabOrder = 3
+    end
+    object RectangleEndereco: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFF1F1F5
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.Y = 25.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object Label2: TLabel
+        Align = Client
+        StyledSettings = [FontColor]
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 295.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        Text = 'Endere'#231'o'
+        TabOrder = 1
+      end
+      object Image1: TImage
+        MultiResBitmap.Height = 128
+        MultiResBitmap.Width = 128
+        MultiResBitmap = <
+          item
+            Width = 128
+            Height = 128
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000080000000800806000000C33E61
+              CB0000000473424954080808087C0864880000027049444154789CEDDD3F6A54
+              510046F19318883B3060E30A6CECDC80889595C2283E4D5C82B6828BD14AB048
+              304BB0B0B0B57001363689A84433162130411CF3FECDCD7DDFF9C1EB2670E13B
+              E4BD4CC804244992244992244DDFA5D20718C03A7003B8095C05BE0047454FA4
+              95B9037C06E60BD737E025B051F05C5A8119F09BB3E32F5EBBC066B1D369545B
+              C021FF1EFFF4DAC30826E939FF1FFFF4DA072E9739A6C6F28AF30760044BAC97
+              3E4047C72D5F7F0B788B11FCA5D6003E76F81A2398902BC001ED6E033E184ECC
+              8C935B811104DB61F97B013E1806300219818C401881806D8C209E11C8086404
+              C208841108788211C4330219818C40188130026104C2088411082310F0182388
+              67043202198130026104021A8C205E8311C46B308278F7815F184134239011C8
+              08841108231027111C6104D18C4046202310F090EE0F866FA8F7A37CB5A04F04
+              CDEA8FAB31748DE07D89C36A1CF768FF4CF013581BF350DE632EB679E9036818
+              DE0282F579087C54E0BC1A50DF1F0347BDFF6B5C7DDE087A876F0455ADCF6F06
+              1DBF728E1FCCF183397E30C70FE6F8C11ABAFF9590E357AEC1F16335387EAC3E
+              9F15E0F89573FC608E1FCCF183397E30C70FD6E773831DBF728E1FCCF183397E
+              30C70FE6F8C11C3F98E30773FC608E1F6C1BC78FE5F8C11C3F98E30773FC608E
+              1F6C07C78FE5F8C11C3F98E30773FC608E1FEC298E1FCBF1833D008EE936FE1E
+              B0B9FA236B285BC0218E1FEB198E1FED35DEF30751EBFF0B98B77CFD3E7017F8
+              31C25954409B5B80DFF627E8BC0F818E3F613396BF07B08BE34FDE6DE0136787
+              3F005E001B05CF558D29FC478A35E03A700DF80A7C00BE973C90244992244992
+              245D2C7F00AB5FCF907C2A3C150000000049454E44AE426082}
+            FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\more.png'
+          end>
+        Align = Right
+        HitTest = False
+        Opacity = 0.400000005960464500
+        Margins.Right = 5.000000000000000000
+        Position.X = 315.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 90.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object LabelFormaDePagamento: TLabel
+      Align = Top
+      StyledSettings = [FontColor]
+      Position.Y = 135.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Forma de Pagamento'
+      TabOrder = 2
+    end
+    object RectangleFormaPagamento: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFF1F1F5
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object LabelFormaPagamento: TLabel
+        Align = Client
+        StyledSettings = [FontColor]
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 295.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        Text = 'Cat'#227'o'
+        TabOrder = 1
+      end
+      object Image2: TImage
+        MultiResBitmap.Height = 128
+        MultiResBitmap.Width = 128
+        MultiResBitmap = <
+          item
+            Width = 128
+            Height = 128
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000080000000800806000000C33E61
+              CB0000000473424954080808087C0864880000027049444154789CEDDD3F6A54
+              510046F19318883B3060E30A6CECDC80889595C2283E4D5C82B6828BD14AB048
+              304BB0B0B0B57001363689A84433162130411CF3FECDCD7DDFF9C1EB2670E13B
+              E4BD4CC804244992244992244DDFA5D20718C03A7003B8095C05BE0047454FA4
+              95B9037C06E60BD737E025B051F05C5A8119F09BB3E32F5EBBC066B1D369545B
+              C021FF1EFFF4DAC30826E939FF1FFFF4DA072E9739A6C6F28AF30760044BAC97
+              3E4047C72D5F7F0B788B11FCA5D6003E76F81A2398902BC001ED6E033E184ECC
+              8C935B811104DB61F97B013E1806300219818C401881806D8C209E11C8086404
+              C208841108788211C4330219818C40188130026104C2088411082310F0182388
+              67043202198130026104021A8C205E8311C46B308278F7815F184134239011C8
+              08841108231027111C6104D18C4046202310F090EE0F866FA8F7A37CB5A04F04
+              CDEA8FAB31748DE07D89C36A1CF768FF4CF013581BF350DE632EB679E9036818
+              DE0282F579087C54E0BC1A50DF1F0347BDFF6B5C7DDE087A876F0455ADCF6F06
+              1DBF728E1FCCF183397E30C70FE6F8C11ABAFF9590E357AEC1F16335387EAC3E
+              9F15E0F89573FC608E1FCCF183397E30C70FD6E773831DBF728E1FCCF183397E
+              30C70FE6F8C11C3F98E30773FC608E1F6C1BC78FE5F8C11C3F98E30773FC608E
+              1F6C07C78FE5F8C11C3F98E30773FC608E1FEC298E1FCBF1833D008EE936FE1E
+              B0B9FA236B285BC0218E1FEB198E1FED35DEF30751EBFF0B98B77CFD3E7017F8
+              31C25954409B5B80DFF627E8BC0F818E3F613396BF07B08BE34FDE6DE0136787
+              3F005E001B05CF558D29FC478A35E03A700DF80A7C00BE973C90244992244992
+              245D2C7F00AB5FCF907C2A3C150000000049454E44AE426082}
+            FileName = 'E:\git_hub\ecommerce_delphi\mobile\images\more.png'
+          end>
+        Align = Right
+        HitTest = False
+        Opacity = 0.400000005960464500
+        Margins.Right = 5.000000000000000000
+        Position.X = 315.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 90.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object RectangleDetalheDoPedido: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFF1F1F5
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.Y = 295.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 150.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Size.Width = 350.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object LabelTotlaDosItens: TLabel
+          Align = Left
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          Text = 'Total dos Itens'
+          TabOrder = 2
+        end
+        object Label3: TLabel
+          Align = Right
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 185.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.HorzAlign = Trailing
+          Text = 'R$ 0,00'
+          TabOrder = 1
+        end
+      end
+      object Layout3: TLayout
+        Align = Top
+        Position.Y = 100.000000000000000000
+        Size.Width = 350.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object LabelTotalPedido: TLabel
+          Align = Left
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Total do Pedido'
+          TabOrder = 2
+        end
+        object Label5: TLabel
+          Align = Right
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 185.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Trailing
+          Text = 'R$ 0,00'
+          TabOrder = 1
+        end
+      end
+      object Layout4: TLayout
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 350.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object LabelFrete: TLabel
+          Align = Left
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          Text = 'Frete'
+          TabOrder = 2
+        end
+        object LabelVlorFrete: TLabel
+          Align = Right
+          StyledSettings = [FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 185.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.HorzAlign = Trailing
+          Text = 'Frete Gratis'
+          TabOrder = 1
+        end
+      end
+    end
+    object LabelDetalhesDoPedido: TLabel
+      Align = Top
+      StyledSettings = [FontColor]
+      Position.Y = 270.000000000000000000
+      Size.Width = 350.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Detalhe do Pedido'
+      TabOrder = 1
     end
   end
 end

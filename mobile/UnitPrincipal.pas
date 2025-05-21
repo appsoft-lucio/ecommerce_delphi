@@ -74,6 +74,7 @@ type
     procedure FormResize(Sender: TObject);
     procedure ListBoxProdutosItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
+    procedure SpeedButtonFinalizarPedidoClick(Sender: TObject);
   private
     procedure TrocarAba(img: TImage);
     procedure AddCategoria(id_categoria: integer; categoria: string);
@@ -108,7 +109,7 @@ implementation
 
 {$R *.fmx}
 
-uses Frame.Categoria, Frame.Produto;
+uses Frame.Categoria, Frame.Produto, UnitCheckout;
 
         procedure TFormPrincipal.DownloadFoto(lb: TListBox);
 var
@@ -261,6 +262,15 @@ begin
 
   //Listar produtos dessa cattegoria
   ListarProdutos(item.Tag);
+
+end;
+
+procedure TFormPrincipal.SpeedButtonFinalizarPedidoClick(Sender: TObject);
+begin
+        if NOT Assigned(FormCheckout) then
+                Application.CreateForm(TFormCheckout, FormCheckout);
+
+        FormCheckout.Show;
 
 end;
 

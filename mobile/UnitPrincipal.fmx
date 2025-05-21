@@ -3523,6 +3523,7 @@ object FormPrincipal: TFormPrincipal
       end
       object RectangleFinalizarPedido: TRectangle
         Align = Bottom
+        Cursor = crHandPoint
         Fill.Color = xFFF57C00
         Margins.Left = 15.000000000000000000
         Margins.Top = 5.000000000000000000
@@ -3538,6 +3539,7 @@ object FormPrincipal: TFormPrincipal
         YRadius = 8.000000000000000000
         object SpeedButtonFinalizarPedido: TSpeedButton
           Align = Client
+          Cursor = crHandPoint
           StyledSettings = [Family]
           Margins.Top = -10.000000000000000000
           Margins.Bottom = -10.000000000000000000
@@ -3550,6 +3552,7 @@ object FormPrincipal: TFormPrincipal
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.FontColor = claWhite
           TextSettings.Trimming = None
+          OnClick = SpeedButtonFinalizarPedidoClick
         end
       end
       object LayoutTotal: TLayout
