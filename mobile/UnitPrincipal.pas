@@ -62,7 +62,7 @@ type
     BtnAddQtd: TImage;
     RectangleFinalizarCompra: TRectangle;
     SizeGrip1: TSizeGrip;
-    SpeedButtonFinalizarCompra: TSpeedButton;
+    SpeedButtonFinalizarPedido: TSpeedButton;
     LayoutTotal: TLayout;
     LabelTotal: TLabel;
     LabelValorTotal: TLabel;

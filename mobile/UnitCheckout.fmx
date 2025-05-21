@@ -1,0 +1,19 @@
+object FormCheckout: TFormCheckout
+  Left = 0
+  Top = 0
+  Caption = 'Checkout'
+  ClientHeight = 670
+  ClientWidth = 380
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 380.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+end
