@@ -60,7 +60,7 @@ type
     ImageIconLixeira: TImage;
     ListViewCart: TListView;
     BtnAddQtd: TImage;
-    RectangleFinalizarCompra: TRectangle;
+    RectangleFinalizarPedido: TRectangle;
     SizeGrip1: TSizeGrip;
     SpeedButtonFinalizarPedido: TSpeedButton;
     LayoutTotal: TLayout;

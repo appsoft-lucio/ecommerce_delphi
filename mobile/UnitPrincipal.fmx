@@ -3521,7 +3521,7 @@ object FormPrincipal: TFormPrincipal
         CanSwipeDelete = False
         ShowSelection = False
       end
-      object RectangleFinalizarCompra: TRectangle
+      object RectangleFinalizarPedido: TRectangle
         Align = Bottom
         Fill.Color = xFFF57C00
         Margins.Left = 15.000000000000000000
