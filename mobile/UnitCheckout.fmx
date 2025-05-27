@@ -397,7 +397,7 @@ object FormCheckout: TFormCheckout
           Text = 'Frete'
           TabOrder = 2
         end
-        object LabelVlorFrete: TLabel
+        object LabelValorFrete: TLabel
           Align = Right
           StyledSettings = [FontColor]
           Margins.Left = 10.000000000000000000

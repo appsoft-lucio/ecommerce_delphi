@@ -23,7 +23,7 @@ object FormPrincipal: TFormPrincipal
     Size.Height = 672.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 1
     TabPosition = Top
     Sizes = (
@@ -133,7 +133,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 95.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -3368,7 +3368,7 @@ object FormPrincipal: TFormPrincipal
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 95.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False

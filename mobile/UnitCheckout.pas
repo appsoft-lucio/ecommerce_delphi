@@ -33,7 +33,7 @@ type
     Label5: TLabel;
     Layout4: TLayout;
     LabelFrete: TLabel;
-    LabelVlorFrete: TLabel;
+    LabelValorFrete: TLabel;
     procedure ImageRetornarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
